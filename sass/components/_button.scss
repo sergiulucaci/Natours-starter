@@ -1,5 +1,7 @@
 .btn {
-  &:link, &:visited {
+  &, // <-- this refers to button or to all the elements that uses this class
+  &:link,
+  &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -8,6 +10,10 @@
     transition: all .2s;
     position: relative;
     font-size: 1.6rem;
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -20,7 +26,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-.1rem);
     box-shadow: 0 .5rem 1rem $color-black;
   }
